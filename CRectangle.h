@@ -29,6 +29,12 @@ public:
 	~Rectangle();
 	/// @}
 
+	/// @name OPERATOR OVERLOADING
+	/// @{
+	Rectangle& operator=(const Rectangle& r);
+	bool operator==(const Rectangle& r);
+	/// @}
+
 	
 	/// @name BASIC HANDLING
 	/// @{
@@ -65,7 +71,8 @@ public:
 	void WarningMessage(const char *string);
 	void Dump();
 	/// @}
-		
+	
+	
 };
 
 #endif

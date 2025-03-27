@@ -1,96 +1,58 @@
-#include<iostream> 
+#include<iostream>
 #include<cstring>
-
-using namespace std;
-
-
 
 #include "CRectangle.h"
 
-void ProcessRectangle(Rectangle* r) {
-	
-	char msg1[1000];
-	int size = strlen("scherzone");
-	memcpy(msg1,"scherzone",size); 
-	msg1[size]='\0';
-	
-	cout << endl;
-	cout << "######## Process ###########" << endl;
-	
-	float w = r->GetWidth(); 
-	float h = r->GetHeight();	
-		
-	r->SetWidth(h); 
-	r->SetHeight(w);
-	
-
-	r->SetText(msg1);
-	
-	
-	r->Dump(); 
-	cout << "######### ######### ##########" << endl;
-	
-}
-
-
-
-/* void ProcessRectangle(Rectangle r) {
-	
-	char msg1[1000];
-	int size = strlen("scherzone");
-	memcpy(msg1,"scherzone",size); 
-	msg1[size]='\0';
-	
-	cout << endl;
-	cout << "######## Process ###########" << endl;
-	
-	float w = r.GetWidth(); 
-	float h = r.GetHeight();	
-		
-	r.SetWidth(h); 
-	r.SetHeight(w);
-	
-
-	r.SetText(msg1);
-	
-	
-	r.Dump(); 
-	cout << "######### ######### ##########" << endl;
-}
-*/
-
+using namespace std;
 
 int main() {
 
-	Rectangle rectA(10,5);
 	
+	Rectangle rectA(10,5);
+	Rectangle rectB(3,7);
+	Rectangle rectC;
 	
 	char msg1[1000];
-	int size = strlen("prova");
-	memcpy(msg1,"prova",size); 
+	int size = strlen("prova A");
+	memcpy(msg1,"prova A",size); 
 	msg1[size]='\0';
 
-	rectA.SetText(msg1);
-	Rectangle rectB=rectA;
+	char msg2[1000];
+	size = strlen("prova B");
+	memcpy(msg2,"prova B",size); 
+	msg2[size]='\0';
 	
+	rectA.SetText(msg1);
+	rectB.SetText(msg2);
+		
 	
 	cout << endl;
-	cout << "****** rectangle A dump ******" << endl;
-	rectA.Dump(); 
-	cout << "****** ********* ******" << endl;
-	cout << "****** rectangle B dump ******" << endl;
-	rectB.Dump(); 
-	cout << "****** ********* ******" << endl;
+	cout << "rectangle A" << endl;
+	rectA.Dump();
+
+	cout << endl;	
+	cout << "rectangle B" << endl;
+	rectB.Dump();
+
+	cout << endl;	
+	cout << "rectangle C" << endl;
+	rectC.Dump();
+
+			
+	rectC=rectA; 
 	
-	
+	cout << endl;	
+	cout << "rectangle C" << endl;
+	rectC.Dump();
 
 	
-	ProcessRectangle(&rectA); 
 	
-	cout << endl;
-	cout << "****** rectangle A dump ******" << endl;
-	rectA.Dump();
-	cout << "****** ********* ******" << endl;
+	
+	if (rectA == rectC) 
+		cout<< "A e C sono uguali" << endl;
+	else 
+		cout<< "A e C sono diversi" << endl;
+		
 	
 	return 0;
 

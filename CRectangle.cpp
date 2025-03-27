@@ -222,6 +222,30 @@ void Rectangle::GetText(char* string) {
 
 }
 
+/// @brief overload of operator =
+/// @param object that is to the right of = operator
+/// @return the pointer to itself
+Rectangle& Rectangle::operator=(const Rectangle& r) {
+
+	cout << "Rectangle - operator =" << endl;
+
+	Init(r);
+
+	return *this;
+}
+
+/// @brief overload of operator ==
+/// @param the object to check the equality with
+/// @return true if the two object are the same
+bool Rectangle::operator==(const Rectangle& r) {
+	
+	if (r.width == width && r.height == height)
+		return true;
+
+	return false;
+}
+
+
 
 
 
