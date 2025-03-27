@@ -17,11 +17,9 @@ private:
 	float height;
 	float width;
 	
+	char* text;
 
 public:
-	
-	
-	
 	/// @name CONSTRUCTORS/DESTRUCTOR
 	/// @{
 	Rectangle();
@@ -30,7 +28,7 @@ public:
 	
 	~Rectangle();
 	/// @}
-	
+
 	
 	/// @name BASIC HANDLING
 	/// @{
@@ -46,6 +44,7 @@ public:
 	void SetWidth(float w);
 	void SetDim(float w, float h); 
 	
+	void SetText(const char* string);
 	
 	void GetDim(float &w, float &h);
 	float GetHeight();
@@ -54,6 +53,8 @@ public:
 	
 	float GetPerimeter(); 
 	float GetArea();
+
+	void GetText(char* string);
 	
 	/// @}
 	
